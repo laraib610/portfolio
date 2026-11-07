@@ -47,6 +47,106 @@ const projects = [
   }
 ];
 
+import { useState, useEffect } from "react";
+
+function ProjectCard({ project }) {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const images = project.image;
+
+  const nextSlide = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentImage(
+      (prev) => (prev - 1 + images.length) % images.length
+    );
+  };
+
+  // Automatic slideshow
+  useEffect(() => {
+    if (images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <article className="project-card">
+
+      <div className="project-image">
+
+        <img
+          src={images[currentImage]}
+          alt={`${project.title} screenshot ${currentImage + 1}`}
+        />
+
+        <span className="project-number">
+          {project.number}
+        </span>
+
+        {images.length > 1 && (
+          <>
+            <button
+              className="slider-arrow prev"
+              onClick={prevSlide}
+              aria-label="Previous image"
+            >
+              &#10094;
+            </button>
+
+            <button
+              className="slider-arrow next"
+              onClick={nextSlide}
+              aria-label="Next image"
+            >
+              &#10095;
+            </button>
+
+            <div className="slider-dots">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  className={`slider-dot ${
+                    currentImage === index ? "active" : ""
+                  }`}
+                  onClick={() => setCurrentImage(index)}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+
+      </div>
+
+      <div className="project-info">
+        <p className="project-category">{project.category}</p>
+
+        <h3>{project.title}</h3>
+
+        <p>{project.description}</p>
+
+        <div className="project-tech">
+          {project.tech.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+
+        <a href={project.link} className="project-link">
+          View project ↗
+        </a>
+      </div>
+
+    </article>
+  );
+}
+
+
 function App() {
   return (
     <div className="portfolio">
@@ -171,42 +271,16 @@ function App() {
             A selection of projects and interfaces I've contributed to.
           </p>
 
+         
           <div className="project-grid">
             {projects.map((project) => (
-              <article className="project-card" key={project.number}>
-                <div className="project-image">
-                {project.image.map((imgSrc, index) => (
-                  <img
-                  src={imgSrc}
-                    key={index}
-                    alt={`${project.title} screenshot`}
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                    }}
-                    />
-                ))}
-            
-                  <span className="project-number">{project.number}</span>
-                </div>
-
-                <div className="project-info">
-                  <p className="project-category">{project.category}</p>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-
-                  <div className="project-tech">
-                    {project.tech.map((item) => (
-                      <span key={item}>{item}</span>
-                    ))}
-                  </div>
-
-                  <a href={project.link} className="project-link">
-                    View project ↗
-                  </a>
-                </div>
-              </article>
+              <ProjectCard
+                key={project.number}
+                project={project}
+              />
             ))}
           </div>
+
         </section>
 
         <section className="experience section" id="experience">

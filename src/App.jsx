@@ -1,5 +1,11 @@
 
 import "./App.css";
+import uc from "./assets/images/uc.png";
+import uc_hotel from "./assets/images/uc_hotel.png";
+import uc_hotel_grid from "./assets/images/uc_hotel_grid.png";
+import uc_pb3 from "./assets/images/uc_pb3.png";
+import uc_pb2 from "./assets/images/uc_pb2.png";
+import uc_pb1 from "./assets/images/uc_pb1.png";
 
 const skills = [
   "Angular", "React.js", "TypeScript", "JavaScript",
@@ -16,7 +22,7 @@ const projects = [
     description:
       "A travel platform focused on Umrah packages, inquiries, hotel services and a smooth booking experience.",
     tech: ["JavaScript", "HTML", "CSS", "Bootstrap"],
-    image: "/images/umrah-homepage.png",
+    image: [uc, uc_hotel, uc_hotel_grid],
     link: "#"
   },
   {
@@ -26,7 +32,7 @@ const projects = [
     description:
       "A dashboard experience for managing partners, onboarding, business information, leads and operations.",
     tech: ["Angular", "TypeScript", "REST APIs"],
-    image: "/images/partners-dashboard.png",
+    image: ["/images/partners-dashboard.png"],
     link: "#"
   },
   {
@@ -36,7 +42,7 @@ const projects = [
     description:
       "An interactive package-building experience with travel options, hotels, transportation and checkout flow.",
     tech: ["JavaScript", "HTML", "CSS"],
-    image: "/images/package-builder.png",
+    image: [uc_pb1, uc_pb2, uc_pb3],
     link: "#"
   }
 ];
@@ -169,13 +175,17 @@ function App() {
             {projects.map((project) => (
               <article className="project-card" key={project.number}>
                 <div className="project-image">
+                {project.image.map((imgSrc, index) => (
                   <img
-                    src={project.image}
+                  src={imgSrc}
+                    key={index}
                     alt={`${project.title} screenshot`}
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
                     }}
-                  />
+                    />
+                ))}
+            
                   <span className="project-number">{project.number}</span>
                 </div>
 

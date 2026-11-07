@@ -325,6 +325,11 @@ h2 span,
   height: 240px;
   background: linear-gradient(135deg, #263c30, #17221c);
   position: relative;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   overflow: hidden;
 }
 

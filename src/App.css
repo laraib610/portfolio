@@ -484,12 +484,22 @@ h2 span,
   font-weight: 600;
   margin-top: 5px;
 }
+.timeline-outer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+}
 
 .timeline {
-  max-width: 750px;
+      max-width: 750px;
+
   margin-top: 45px;
   border-left: 1px solid #45624e;
   padding-left: 35px;
+  
 }
 
 .timeline-item {

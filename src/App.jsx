@@ -293,46 +293,49 @@ function App() {
           <p className="eyebrow">04 / EXPERIENCE</p>
           <h2>My professional <span>journey.</span></h2>
 
-          <div className="timeline">
-            <div className="timeline-item">
-              <span className="timeline-dot"></span>
-              <div>
-                <p className="timeline-date">2025 — Present</p>
-                <h3>Frontend Developer</h3>
-                <h4>Umrah Companions / Funadiq</h4>
-                <p>
-                  Working on web platforms, booking experiences,
-                  dashboards, responsive interfaces and frontend
-                  functionality.
-                </p>
+          <div className="timeline-outer">
+            <div className="timeline">
+                <div className="timeline-item">
+                <span className="timeline-dot"></span>
+                <div>
+                  <p className="timeline-date">2025 — Present</p>
+                  <h3>Frontend Developer</h3>
+                  <h4>Umrah Companions / Funadiq</h4>
+                  <p>
+                    Working on web platforms, booking experiences,
+                    dashboards, responsive interfaces and frontend
+                    functionality.
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="timeline-item">
-              <span className="timeline-dot"></span>
-              <div>
-                <p className="timeline-date">2022 — 2025</p>
-                <h3>JavaScript Developer</h3>
-                <h4>Softosol</h4>
-                <p>
-                  Worked on web development projects using JavaScript,
-                  Angular, Node.js, WordPress and Bubble.io.
-                </p>
+              <div className="timeline-item">
+                <span className="timeline-dot"></span>
+                <div>
+                  <p className="timeline-date">2022 — 2025</p>
+                  <h3>JavaScript Developer</h3>
+                  <h4>Softosol</h4>
+                  <p>
+                    Worked on web development projects using JavaScript,
+                    Angular, Node.js, WordPress and Bubble.io.
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="timeline-item">
-              <span className="timeline-dot"></span>
-              <div>
-                <p className="timeline-date">2021 — 2022</p>
-                <h3>Intern Web Developer</h3>
-                <h4>Atlantis BPO Solution</h4>
-                <p>
-                  Developed responsive websites and custom web
-                  applications using Laravel and frontend technologies.
-                </p>
+              <div className="timeline-item">
+                <span className="timeline-dot"></span>
+                <div>
+                  <p className="timeline-date">2021 — 2022</p>
+                  <h3>Intern Web Developer</h3>
+                  <h4>Atlantis BPO Solution</h4>
+                  <p>
+                    Developed responsive websites and custom web
+                    applications using Laravel and frontend technologies.
+                  </p>
+                </div>
               </div>
             </div>
+            
           </div>
         </section>
 

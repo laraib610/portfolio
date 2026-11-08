@@ -6,6 +6,12 @@ import uc_hotel_grid from "./assets/images/uc_hotel_grid.png";
 import uc_pb3 from "./assets/images/uc_pb3.png";
 import uc_pb2 from "./assets/images/uc_pb2.png";
 import uc_pb1 from "./assets/images/uc_pb1.png";
+import uc_consultant from "./assets/images/uc_consultant.png";
+import uc_consultant2 from "./assets/images/uc_consultant2.png";
+import uc_consultant3 from "./assets/images/uc_consultant3.png";
+import uc_consultant4 from "./assets/images/uc_consultant4.png";
+import uc_consultant5 from "./assets/images/uc_consultant5.png";
+import uc_consultant6 from "./assets/images/uc_consultant6.png";
 
 const skills = [
   "Angular", "React.js", "TypeScript", "JavaScript",
@@ -32,7 +38,7 @@ const projects = [
     description:
       "A dashboard experience for managing partners, onboarding, business information, leads and operations.",
     tech: ["Angular", "TypeScript", "REST APIs"],
-    image: ["/images/partners-dashboard.png"],
+    image: [uc_consultant, uc_consultant2, uc_consultant3, uc_consultant4, uc_consultant5, uc_consultant6],
     link: "#"
   },
   {

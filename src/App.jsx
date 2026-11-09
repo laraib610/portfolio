@@ -1,23 +1,52 @@
 
+import { useEffect, useState } from "react";
 import "./App.css";
+
+// ==========================================
+// ASSETS
+// ==========================================
+
 import uc from "./assets/images/uc.png";
-import uc_hotel from "./assets/images/uc_hotel.png";
-import uc_hotel_grid from "./assets/images/uc_hotel_grid.png";
-import uc_pb3 from "./assets/images/uc_pb3.png";
-import uc_pb2 from "./assets/images/uc_pb2.png";
-import uc_pb1 from "./assets/images/uc_pb1.png";
-import uc_consultant from "./assets/images/uc_consultant.png";
-import uc_consultant2 from "./assets/images/uc_consultant2.png";
-import uc_consultant3 from "./assets/images/uc_consultant3.png";
-import uc_consultant4 from "./assets/images/uc_consultant4.png";
-import uc_consultant5 from "./assets/images/uc_consultant5.png";
-import uc_consultant6 from "./assets/images/uc_consultant6.png";
+import ucHotel from "./assets/images/uc_hotel.png";
+import ucHotelGrid from "./assets/images/uc_hotel_grid.png";
+
+import ucPb1 from "./assets/images/uc_pb1.png";
+import ucPb2 from "./assets/images/uc_pb2.png";
+import ucPb3 from "./assets/images/uc_pb3.png";
+
+import ucConsultant1 from "./assets/images/uc_consultant.png";
+import ucConsultant2 from "./assets/images/uc_consultant2.png";
+import ucConsultant3 from "./assets/images/uc_consultant3.png";
+import ucConsultant4 from "./assets/images/uc_consultant4.png";
+import ucConsultant5 from "./assets/images/uc_consultant5.png";
+import ucConsultant6 from "./assets/images/uc_consultant6.png";
+
+import ucZindagi1 from "./assets/images/uc_zindagi.png";
+import ucZindagi2 from "./assets/images/uc_zindagi2.png";
+import ucZindagi3 from "./assets/images/uc_zindagi3.png";
+import ucZindagi4 from "./assets/images/uc_zindagi4.png";
+import ucZindagi5 from "./assets/images/uc_zindagi5.png";
+
+// ==========================================
+// PORTFOLIO DATA
+// ==========================================
 
 const skills = [
-  "Angular", "React.js", "TypeScript", "JavaScript",
-  "HTML5", "CSS3", "Tailwind CSS", "Bootstrap",
-  "Node.js", "WordPress", "Bubble.io", "REST APIs",
-  "Git", "GitHub", "Figma"
+  "Angular",
+  "React.js",
+  "TypeScript",
+  "JavaScript",
+  "HTML5",
+  "CSS3",
+  "Tailwind CSS",
+  "Bootstrap",
+  "Node.js",
+  "WordPress",
+  "Bubble.io",
+  "REST APIs",
+  "Git",
+  "GitHub",
+  "Figma",
 ];
 
 const projects = [
@@ -26,44 +55,94 @@ const projects = [
     title: "Umrah Companions",
     category: "Travel & Booking Platform",
     description:
-      "A travel platform focused on Umrah packages, inquiries, hotel services and a smooth booking experience.",
+      "A comprehensive travel platform focused on Umrah packages, inquiries, hotel services and a seamless booking experience.",
     tech: ["JavaScript", "HTML", "CSS", "Bootstrap"],
-    image: [uc, uc_hotel, uc_hotel_grid],
-    link: "#"
+    image: [uc, ucHotel, ucHotelGrid],
+    link: "#",
   },
   {
     number: "02",
     title: "Partners Dashboard",
     category: "Dashboard Application",
     description:
-      "A dashboard experience for managing partners, onboarding, business information, leads and operations.",
+      "A dashboard application for managing partners, onboarding, business information, leads and operational activities.",
     tech: ["Angular", "TypeScript", "REST APIs"],
-    image: [uc_consultant, uc_consultant2, uc_consultant3, uc_consultant4, uc_consultant5, uc_consultant6],
-    link: "#"
+    image: [
+      ucConsultant1,
+      ucConsultant2,
+      ucConsultant3,
+      ucConsultant4,
+      ucConsultant5,
+      ucConsultant6,
+    ],
+    link: "#",
   },
   {
     number: "03",
     title: "Package Builder",
     category: "Booking & Checkout",
     description:
-      "An interactive package-building experience with travel options, hotels, transportation and checkout flow.",
+      "An interactive package-building experience with travel options, hotels, transportation and an integrated checkout flow.",
     tech: ["JavaScript", "HTML", "CSS"],
-    image: [uc_pb1, uc_pb2, uc_pb3],
-    link: "#"
+    image: [ucPb1, ucPb2, ucPb3],
+    link: "#",
   },
   {
     number: "04",
     title: "Umrah with Zindagi",
-    category: "Booking & Checkout (banking integration)",
+    category: "Fintech Integration | Mobile Application",
     description:
-      "A dedicated Umrah experience integrated within a banking application, enabling users to conveniently explore and access Umrah services directly through their banking app.",
-    tech: ["JavaScript", "HTML", "CSS"],
-    image: [uc_pb1, uc_pb2, uc_pb3],
-    link: "#"
-  }
+      "An integrated Umrah service within a banking application, providing users with convenient access to pilgrimage-related services through a seamless mobile experience. Combines travel planning, package selection and secure banking transactions in one platform.",
+    tech: ["JavaScript", "HTML", "CSS", "Banking Integration"],
+    image: [
+      ucZindagi1,
+      ucZindagi2,
+      ucZindagi3,
+      ucZindagi4,
+      ucZindagi5,
+    ],
+    link: "#",
+  },
 ];
 
-import { useState, useEffect } from "react";
+const experience = [
+  {
+    date: "2025 — Present",
+    role: "Frontend Developer",
+    company: "Umrah Companions / Funadiq",
+    description:
+      "Working on web platforms, booking experiences, dashboards, responsive interfaces and frontend functionality.",
+  },
+  {
+    date: "2022 — 2025",
+    role: "JavaScript Developer",
+    company: "Softosol",
+    description:
+      "Worked on web development projects using JavaScript, Angular, Node.js, WordPress and Bubble.io.",
+  },
+  {
+    date: "2021 — 2022",
+    role: "Intern Web Developer",
+    company: "Atlantis BPO Solution",
+    description:
+      "Developed responsive websites and custom web applications using Laravel and frontend technologies.",
+  },
+];
+
+const socialLinks = [
+  {
+    name: "GitHub",
+    url: "https://github.com/laraib610",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/laraib-khan-9b3a551a4",
+  },
+];
+
+// ==========================================
+// REUSABLE PROJECT SLIDESHOW
+// ==========================================
 
 function ProjectCard({ project }) {
   const [currentImage, setCurrentImage] = useState(0);
@@ -80,25 +159,22 @@ function ProjectCard({ project }) {
     );
   };
 
-  // Automatic slideshow
+  // Automatically change images every 3.5 seconds
   useEffect(() => {
     if (images.length <= 1) return;
 
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 3500);
+    const interval = setInterval(nextSlide, 3500);
 
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
     <article className="project-card">
-
       <div className="project-image">
-
         <img
           src={images[currentImage]}
           alt={`${project.title} screenshot ${currentImage + 1}`}
+          loading="lazy"
         />
 
         <span className="project-number">
@@ -108,17 +184,19 @@ function ProjectCard({ project }) {
         {images.length > 1 && (
           <>
             <button
+              type="button"
               className="slider-arrow prev"
               onClick={prevSlide}
-              aria-label="Previous image"
+              aria-label="Previous screenshot"
             >
               &#10094;
             </button>
 
             <button
+              type="button"
               className="slider-arrow next"
               onClick={nextSlide}
-              aria-label="Next image"
+              aria-label="Next screenshot"
             >
               &#10095;
             </button>
@@ -126,46 +204,145 @@ function ProjectCard({ project }) {
             <div className="slider-dots">
               {images.map((_, index) => (
                 <button
+                  type="button"
                   key={index}
                   className={`slider-dot ${
                     currentImage === index ? "active" : ""
                   }`}
                   onClick={() => setCurrentImage(index)}
-                  aria-label={`Go to image ${index + 1}`}
+                  aria-label={`Show screenshot ${index + 1}`}
+                  aria-current={
+                    currentImage === index ? "true" : undefined
+                  }
                 />
               ))}
             </div>
           </>
         )}
-
       </div>
 
       <div className="project-info">
-        <p className="project-category">{project.category}</p>
+        <p className="project-category">
+          {project.category}
+        </p>
 
         <h3>{project.title}</h3>
 
         <p>{project.description}</p>
 
         <div className="project-tech">
-          {project.tech.map((item) => (
-            <span key={item}>{item}</span>
+          {project.tech.map((technology) => (
+            <span key={technology}>{technology}</span>
           ))}
         </div>
 
-        <a href={project.link} className="project-link">
-          View project ↗
-        </a>
+        {project.link !== "#" && (
+          <a
+            href={project.link}
+            className="project-link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View project ↗
+          </a>
+        )}
       </div>
-
     </article>
   );
 }
 
+// ==========================================
+// SECTION COMPONENTS
+// ==========================================
+
+function SectionHeading({ number, eyebrow, title, highlight, description }) {
+  return (
+    <>
+      <p className="eyebrow">
+        {number} / {eyebrow}
+      </p>
+
+      <h2>
+        {title} <span>{highlight}</span>
+      </h2>
+
+      {description && (
+        <p className="section-description">{description}</p>
+      )}
+    </>
+  );
+}
+
+function ProjectSection() {
+  return (
+    <section className="projects section" id="projects">
+      <SectionHeading
+        number="03"
+        eyebrow="SELECTED WORK"
+        title="Projects I'm"
+        highlight="proud of."
+        description="A selection of projects and interfaces I've contributed to."
+      />
+
+      <div className="project-grid">
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.number}
+            project={project}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ExperienceSection() {
+  return (
+    <section className="experience section" id="experience">
+      <SectionHeading
+        number="04"
+        eyebrow="EXPERIENCE"
+        title="My professional"
+        highlight="journey."
+      />
+
+      <div className="timeline-outer">
+        <div className="timeline">
+          {experience.map((item) => (
+            <article className="timeline-item" key={item.company}>
+              <span className="timeline-dot" />
+
+              <div>
+                <p className="timeline-date">{item.date}</p>
+                <h3>{item.role}</h3>
+                <h4>{item.company}</h4>
+                <p>{item.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ==========================================
+// MAIN APP
+// ==========================================
 
 function App() {
   return (
     <div className="portfolio">
+      <div className="bubble-background">
+    {Array.from({ length: 12 }).map((_, index) => (
+      <span
+        key={index}
+        className={`bubble bubble-${index + 1}`}
+      />
+    ))}
+  </div>
+
+      {/* NAVIGATION */}
       <nav className="navbar">
         <a href="#home" className="logo">
           Laraib<span>.</span>
@@ -176,14 +353,20 @@ function App() {
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
-          <a href="#contact" className="nav-contact">Contact ↗</a>
+          <a href="#contact" className="nav-contact">
+            Contact ↗
+          </a>
         </div>
       </nav>
 
       <main>
+
+        {/* HERO */}
         <section className="hero" id="home">
           <div className="hero-content">
-            <p className="eyebrow">HELLO, I'M LARAIB MUSHTAQ</p>
+            <p className="eyebrow">
+              HELLO, I'M LARAIB MUSHTAQ
+            </p>
 
             <h1>
               Building digital
@@ -203,13 +386,14 @@ function App() {
               <a href="#projects" className="btn-primary">
                 Explore my work ↗
               </a>
+
               <a href="#contact" className="btn-secondary">
                 Let's talk
               </a>
             </div>
 
             <div className="hero-status">
-              <span className="status-dot"></span>
+              <span className="status-dot" />
               Open to exciting opportunities
             </div>
           </div>
@@ -217,9 +401,12 @@ function App() {
           <div className="hero-visual">
             <div className="visual-card">
               <div className="code-header">
-                <span></span><span></span><span></span>
+                <span />
+                <span />
+                <span />
                 <small>developer.js</small>
               </div>
+
               <pre>
                 <code>
                   <span className="code-purple">const</span> developer = {"{"}
@@ -237,19 +424,31 @@ function App() {
                   <span className="code-green">"Let's build!"</span>);
                 </code>
               </pre>
+
               <div className="code-footer">
                 <span>● Available for opportunities</span>
                 <span>JavaScript</span>
               </div>
             </div>
-            <div className="floating-tag tag-one">✦ Creative UI</div>
-            <div className="floating-tag tag-two">{"</>"} Clean Code</div>
+
+            <div className="floating-tag tag-one">
+              ✦ Creative UI
+            </div>
+
+            <div className="floating-tag tag-two">
+              {"</>"} Clean Code
+            </div>
           </div>
         </section>
 
+        {/* ABOUT */}
         <section className="about section" id="about">
-          <p className="eyebrow">01 / ABOUT ME</p>
-          <h2>Turning ideas into <span>digital experiences.</span></h2>
+          <SectionHeading
+            number="01"
+            eyebrow="ABOUT ME"
+            title="Turning ideas into"
+            highlight="digital experiences."
+          />
 
           <div className="about-content">
             <p>
@@ -258,6 +457,7 @@ function App() {
               user-focused web applications. I enjoy transforming
               designs into clean, accessible and functional interfaces.
             </p>
+
             <p>
               My experience includes working with Angular, React,
               JavaScript and TypeScript, along with modern styling
@@ -267,9 +467,14 @@ function App() {
           </div>
         </section>
 
+        {/* SKILLS */}
         <section className="skills section" id="skills">
-          <p className="eyebrow">02 / MY TOOLKIT</p>
-          <h2>Technologies I <span>work with.</span></h2>
+          <SectionHeading
+            number="02"
+            eyebrow="MY TOOLKIT"
+            title="Technologies I"
+            highlight="work with."
+          />
 
           <div className="skills-grid">
             {skills.map((skill) => (
@@ -280,99 +485,59 @@ function App() {
           </div>
         </section>
 
-        <section className="projects section" id="projects">
-          <p className="eyebrow">03 / SELECTED WORK</p>
-          <h2>Projects I'm <span>proud of.</span></h2>
-          <p className="section-description">
-            A selection of projects and interfaces I've contributed to.
-          </p>
+        {/* PROJECTS */}
+        <ProjectSection />
 
-         
-          <div className="project-grid">
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.number}
-                project={project}
-              />
-            ))}
-          </div>
+        {/* EXPERIENCE */}
+        <ExperienceSection />
 
-        </section>
-
-        <section className="experience section" id="experience">
-          <p className="eyebrow">04 / EXPERIENCE</p>
-          <h2>My professional <span>journey.</span></h2>
-
-          <div className="timeline-outer">
-            <div className="timeline">
-                <div className="timeline-item">
-                <span className="timeline-dot"></span>
-                <div>
-                  <p className="timeline-date">2025 — Present</p>
-                  <h3>Frontend Developer</h3>
-                  <h4>Umrah Companions / Funadiq</h4>
-                  <p>
-                    Working on web platforms, booking experiences,
-                    dashboards, responsive interfaces and frontend
-                    functionality.
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <span className="timeline-dot"></span>
-                <div>
-                  <p className="timeline-date">2022 — 2025</p>
-                  <h3>JavaScript Developer</h3>
-                  <h4>Softosol</h4>
-                  <p>
-                    Worked on web development projects using JavaScript,
-                    Angular, Node.js, WordPress and Bubble.io.
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <span className="timeline-dot"></span>
-                <div>
-                  <p className="timeline-date">2021 — 2022</p>
-                  <h3>Intern Web Developer</h3>
-                  <h4>Atlantis BPO Solution</h4>
-                  <p>
-                    Developed responsive websites and custom web
-                    applications using Laravel and frontend technologies.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </section>
-
+        {/* CONTACT */}
         <section className="contact section" id="contact">
           <p className="eyebrow">05 / GET IN TOUCH</p>
+
           <h2>Have a project in mind?</h2>
-          <h2><span>Let's build something great.</span></h2>
+          <h2>
+            <span>Let's build something great.</span>
+          </h2>
+
           <p>
             I'm always interested in connecting with people,
             exploring opportunities and collaborating on meaningful projects.
           </p>
 
-          <a href="mailto:YOUR_EMAIL@example.com" className="btn-primary">
+          <a
+            href="mailto:laraibkhan8242@gmail.com"
+            className="btn-primary"
+          >
             Send me an email ↗
           </a>
 
           <div className="social-links">
-            <a href="YOUR_GITHUB_URL" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {social.name} ↗
+              </a>
+            ))}
           </div>
         </section>
       </main>
 
+      {/* FOOTER */}
       <footer>
-        <a href="#home" className="logo">Laraib<span>.</span></a>
-        <p>Designed & developed with ♥ by Laraib Mushtaq</p>
-        <p>© {new Date().getFullYear()} All rights reserved.</p>
+        <a href="#home" className="logo">
+          Laraib<span>.</span>
+        </a>
+
+        <p>Designed & developed by Laraib Mushtaq</p>
+
+        <p>
+          © {new Date().getFullYear()} All rights reserved.
+        </p>
       </footer>
     </div>
   );

@@ -494,8 +494,7 @@ h2 span,
 }
 
 .timeline {
-      max-width: 750px;
-
+  max-width: 750px;
   margin-top: 45px;
   border-left: 1px solid #45624e;
   padding-left: 35px;

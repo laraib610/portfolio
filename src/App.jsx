@@ -50,6 +50,16 @@ const projects = [
     tech: ["JavaScript", "HTML", "CSS"],
     image: [uc_pb1, uc_pb2, uc_pb3],
     link: "#"
+  },
+  {
+    number: "04",
+    title: "Umrah with Zindagi",
+    category: "Booking & Checkout (banking integration)",
+    description:
+      "A dedicated Umrah experience integrated within a banking application, enabling users to conveniently explore and access Umrah services directly through their banking app.",
+    tech: ["JavaScript", "HTML", "CSS"],
+    image: [uc_pb1, uc_pb2, uc_pb3],
+    link: "#"
   }
 ];
 

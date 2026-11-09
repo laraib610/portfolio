@@ -201,7 +201,7 @@ function ProjectCard({ project }) {
               &#10095;
             </button>
 
-            <div className="slider-dots">
+            {/* <div className="slider-dots">
               {images.map((_, index) => (
                 <button
                   type="button"
@@ -216,7 +216,7 @@ function ProjectCard({ project }) {
                   }
                 />
               ))}
-            </div>
+            </div> */}
           </>
         )}
       </div>
@@ -255,11 +255,11 @@ function ProjectCard({ project }) {
 // SECTION COMPONENTS
 // ==========================================
 
-function SectionHeading({ number, eyebrow, title, highlight, description }) {
+function SectionHeading({  eyebrow, title, highlight, description }) {
   return (
     <>
       <p className="eyebrow">
-        {number} / {eyebrow}
+         {eyebrow}
       </p>
 
       <h2>
@@ -277,7 +277,6 @@ function ProjectSection() {
   return (
     <section className="projects section" id="projects">
       <SectionHeading
-        number="03"
         eyebrow="SELECTED WORK"
         title="Projects I'm"
         highlight="proud of."
@@ -300,7 +299,6 @@ function ExperienceSection() {
   return (
     <section className="experience section" id="experience">
       <SectionHeading
-        number="04"
         eyebrow="EXPERIENCE"
         title="My professional"
         highlight="journey."
@@ -442,7 +440,6 @@ function App() {
         {/* ABOUT */}
         <section className="about section" id="about">
           <SectionHeading
-            number="01"
             eyebrow="ABOUT ME"
             title="Turning ideas into"
             highlight="digital experiences."
@@ -468,7 +465,6 @@ function App() {
         {/* SKILLS */}
         <section className="skills section" id="skills">
           <SectionHeading
-            number="02"
             eyebrow="MY TOOLKIT"
             title="Technologies I"
             highlight="work with."
@@ -491,7 +487,7 @@ function App() {
 
         {/* CONTACT */}
         <section className="contact section" id="contact">
-          <p className="eyebrow">05 / GET IN TOUCH</p>
+          <p className="eyebrow"> GET IN TOUCH</p>
 
           <h2>Have a project in mind?</h2>
           <h2>

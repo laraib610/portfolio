@@ -92,7 +92,7 @@ const projects = [
     title: "Umrah with Zindagi",
     category: "Fintech Integration | Mobile Application",
     description:
-      "An integrated Umrah service within a banking application, providing users with convenient access to pilgrimage-related services through a seamless mobile experience. Combines travel planning, package selection and secure banking transactions in one platform.",
+      "An integrated Umrah service within a banking application, providing users with convenient access to pilgrimage-related services through a seamless mobile experience.",
     tech: ["JavaScript", "HTML", "CSS", "Banking Integration"],
     image: [
       ucZindagi1,
@@ -306,7 +306,6 @@ function ExperienceSection() {
         highlight="journey."
       />
 
-      <div className="timeline-outer">
         <div className="timeline">
           {experience.map((item) => (
             <article className="timeline-item" key={item.company}>
@@ -321,7 +320,6 @@ function ExperienceSection() {
             </article>
           ))}
         </div>
-      </div>
     </section>
   );
 }

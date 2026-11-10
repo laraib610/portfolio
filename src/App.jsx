@@ -59,7 +59,6 @@ const projects = [
       "A comprehensive travel platform focused on Umrah packages, inquiries, hotel services and a seamless booking experience.",
     tech: ["JavaScript", "HTML", "CSS", "Bootstrap"],
     image: [uc, ucHotel, ucHotelGrid],
-    link: "#",
   },
   {
     number: "02",
@@ -76,7 +75,6 @@ const projects = [
       ucConsultant5,
       ucConsultant6,
     ],
-    link: "#",
   },
   {
     number: "03",
@@ -86,14 +84,13 @@ const projects = [
       "An interactive package-building experience with travel options, hotels, transportation and an integrated checkout flow.",
     tech: ["JavaScript", "HTML", "CSS"],
     image: [ucPb1, ucPb2, ucPb3],
-    link: "#",
   },
   {
     number: "04",
     title: "Umrah with Zindagi",
     category: "Mobile Application",
     description:
-      "An integrated Umrah service within a banking application, providing users with convenient access to pilgrimage-related services through a seamless mobile experience.",
+      "Umrah services seamlessly integrated into a banking app for easy pilgrimage access.",
     tech: ["JavaScript", "HTML", "CSS"],
     image: [
       ucZindagi1,
@@ -102,7 +99,6 @@ const projects = [
       ucZindagi4,
       ucZindagi5,
     ],
-    link: "#",
   },
 ];
 
@@ -236,7 +232,7 @@ function ProjectCard({ project }) {
             <span key={technology}>{technology}</span>
           ))}
         </div>
-
+{/* 
         {project.link !== "#" && (
           <a
             href={project.link}
@@ -246,7 +242,7 @@ function ProjectCard({ project }) {
           >
             View project ↗
           </a>
-        )}
+        )} */}
       </div>
     </article>
   );

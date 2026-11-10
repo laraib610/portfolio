@@ -91,10 +91,10 @@ const projects = [
   {
     number: "04",
     title: "Umrah with Zindagi",
-    category: "Fintech Integration | Mobile Application",
+    category: "Mobile Application",
     description:
       "An integrated Umrah service within a banking application, providing users with convenient access to pilgrimage-related services through a seamless mobile experience.",
-    tech: ["JavaScript", "HTML", "CSS", "Banking Integration"],
+    tech: ["JavaScript", "HTML", "CSS"],
     image: [
       ucZindagi1,
       ucZindagi2,

@@ -9,6 +9,7 @@ import "./App.css";
 import uc from "./assets/images/uc.png";
 import ucHotel from "./assets/images/uc_hotel.png";
 import ucHotelGrid from "./assets/images/uc_hotel_grid.png";
+import developer from "./assets/images/developer.png";
 
 import ucPb1 from "./assets/images/uc_pb1.png";
 import ucPb2 from "./assets/images/uc_pb2.png";
@@ -303,21 +304,24 @@ function ExperienceSection() {
         title="My professional"
         highlight="journey."
       />
+    <div className="experience-content">
+      <div className="timeline">
+        {experience.map((item) => (
+          <article className="timeline-item" key={item.company}>
+            <span className="timeline-dot" />
 
-        <div className="timeline">
-          {experience.map((item) => (
-            <article className="timeline-item" key={item.company}>
-              <span className="timeline-dot" />
+            <div>
+              <p className="timeline-date">{item.date}</p>
+              <h3>{item.role}</h3>
+              <h4>{item.company}</h4>
+              <p>{item.description}</p>
+            </div>
+          </article>
+        ))}     
 
-              <div>
-                <p className="timeline-date">{item.date}</p>
-                <h3>{item.role}</h3>
-                <h4>{item.company}</h4>
-                <p>{item.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+      </div>
+      <img src={developer} alt="Developer Illustration" className="timeline-image" />
+    </div>
     </section>
   );
 }

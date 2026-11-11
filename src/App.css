@@ -408,7 +408,7 @@ h2 span,
   box-shadow: 0 10px 30px #0006;
 }
 
-.tag-one { top: 5px; right: -5px; }
+.tag-one { top: 5px; right: 0px; }
 .tag-two { bottom: 0; left: -5px; }
 
 .section {
@@ -592,10 +592,18 @@ margin: 0px;
   }
 
   .slider-arrow {
+    display: none;
     opacity: 1;
     width: 32px;
     height: 32px;
   }
+  .slider-arrow.prev {
+  left: 12px;
+}
+
+.slider-arrow.next {
+  right: 12px;
+}
 }
 
 
@@ -613,6 +621,7 @@ margin: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap:wrap;
   gap: 30px;
 }
 .experience-content img{
